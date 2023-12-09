@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="org.example"/>
+
+    <!--obj1-->
+    <bean id="Vehicul1" class="java.org.example.Vehicul">
+        <property name="marca" value="BMW"/>
+        <property name="pret" value="30000"/>
+    </bean>
+
+    <bean id="Autoturism1" class="org.example.Autoturism" >
+        <property name="marca" value="BMW"/>
+        <property name="pret" value="30000"/>
+        <property name="masa" value="2000"/>
+        <property name="volum" value="205"/>
+    </bean>
+
+    <!--obj2-->
+    <bean id="Vehicul2" class="org.example.Vehicul">
+        <constructor-arg index="0" value="Fiat"></constructor-arg>
+        <constructor-arg index="1" value="50000"></constructor-arg>
+    </bean>
+
+    <bean id="Autoturism2" class="org.example.Autoturism" parent="Vehicul2">
+        <constructor-arg index="2" value="5000"></constructor-arg>
+        <constructor-arg index="3" value="500"></constructor-arg>
+    </bean>
+
+
+<!--    &lt;!&ndash;obj3&ndash;&gt;-->
+<!--    <bean id="Vehicul3" class="org.example.Vehicul">-->
+<!--        <constructor-arg index="0" value="Ducati"></constructor-arg>-->
+<!--        <constructor-arg index="1" value="100000"></constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean id="Motocicleta1" class="org.example.Motocicleta" parent="Vehicul3">-->
+<!--        <constructor-arg index="0" value="Ducati"></constructor-arg>-->
+<!--        <constructor-arg index="1" value="100000"></constructor-arg>-->
+<!--        <constructor-arg index="2" value="1000"></constructor-arg>-->
+<!--    </bean>-->
+
+</beans>
