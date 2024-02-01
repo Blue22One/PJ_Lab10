@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="Vehicul1" class="Problema2.Vehicul">
+        <property name="marca" value="Audi"/>
+        <property name="pret" value="500000"/>
+    </bean>
+
+    <bean id="Auto1" class="Problema2.Autoturism" parent="Vehicul1">
+        <property name="volum" value="1000"/>
+        <property name="masa" value="1500"/>
+    </bean>
+
+    <bean id="Auto2" class="Problema2.Autoturism">
+        <constructor-arg index="0" name="marca" value="Peugeot"/>
+        <constructor-arg index="1" name="pret" value="15000"/>
+        <constructor-arg index="2" name="volum" value="800"/>
+        <constructor-arg index="3" name="masa" value="1600"/>
+    </bean>
+
+    <bean id="Vehicul2" class="Problema2.Vehicul">
+        <property name="marca" value="Ducati"/>
+        <property name="pret" value="50000"/>
+    </bean>
+
+    <bean id="Moto1" class="Problema2.Motocicleta" parent="Vehicul2" init-method="init" destroy-method="disp">
+        <!--        <property name="marca" value="Ducati"/>-->
+        <!--        <property name="pret" value="50000"/>-->
+        <property name="maxSpeed" value="300"/>
+    </bean>
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="Problema2"/>
+
+    <bean id="Tir1" class="Problema2.Tir">
+        <constructor-arg index="0" name="marca" value="Scania"/>
+        <constructor-arg index="1" name="pret" value="15000"/>
+        <constructor-arg index="2" name="maxLoad" value="8000"/>
+    </bean>
+</beans>
